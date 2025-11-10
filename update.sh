@@ -2,3 +2,4 @@ wget -O STM32_open_pin_data.zip https://github.com/STMicroelectronics/STM32_open
 unzip STM32_open_pin_data.zip
 
 
+find svd -type f -name "*.svd" > svds.txt
