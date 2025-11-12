@@ -1,0 +1,3 @@
+[submodule "vendor/bake_mxml"]
+	path = vendor/bake_mxml
+	url = https://github.com/KenthJohan/bake_mxml/
