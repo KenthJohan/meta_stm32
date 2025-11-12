@@ -37,6 +37,21 @@ void generate_file()
 	fclose(result.file);
 }
 
+const char* find_last_slash(const char* str)
+{
+	if (str == NULL) {
+		return NULL;
+	}
+	
+	const char* last_slash = NULL;
+	for (const char* p = str; *p != '\0'; p++) {
+		if (*p == '/') {
+			last_slash = p;
+		}
+	}
+	
+	return last_slash;
+}
 
 void read_file_line_by_line(const char* filename)
 {
