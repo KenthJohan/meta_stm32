@@ -7,81 +7,87 @@ https://jsonformatter.org/xml-viewer
 #include <flecs.h>
 #include <Ec.h>
 #include "parse_svd.h"
+#include "parse_mcu.h"
 #include "parse_modes.h"
 #include "printer.h"
 
 #include <mxml.h>
 
-
-
-void generate_file()
-{
-	ecs_world_t *world = ecs_mini();
-	result_t result = {0};
-	result.color_fields = "#6b93d6";
-	result.color_peripherals = "#9b2316";
-	result.color_registers = "#2b6316";
-	result.doc_mode = 1;
-	result.file = fopen("../meta_flecs/STM32C051.flecs", "w");
-	if (result.file == NULL) {
-		printf("Error opening file!\n");
-		exit(1);
-	}
-	fprintf(result.file, "@color #AA99AF\n");
-	fprintf(result.file, "xmcu {}\n");
-	fprintf(result.file, "module xmcu\n");
-	fprintf(result.file, "module STM32C051\n\n");
-	parse_svd_init(&result, "../meta/svd/stm32c0/STM32C051.svd");
-	//parse_modes_init(world, &result, "config/GPIO-STM32G03x_gpio_v1_0_Modes.xml");
-	ecs_fini(world);
-	fclose(result.file);
-}
-
-const char* find_last_slash(const char* str)
+const char *find_last_slash(const char *str)
 {
 	if (str == NULL) {
 		return NULL;
 	}
-	
-	const char* last_slash = NULL;
-	for (const char* p = str; *p != '\0'; p++) {
+
+	const char *last_slash = NULL;
+	for (const char *p = str; *p != '\0'; p++) {
 		if (*p == '/') {
 			last_slash = p;
 		}
 	}
-	
+
 	return last_slash;
 }
 
-void read_file_line_by_line(const char* filename)
+void read_file_line_by_line(const char *filename)
 {
 	FILE *file = fopen(filename, "r");
 	if (file == NULL) {
 		printf("Error opening file: %s\n", filename);
 		return;
 	}
-	
+
 	char line[1024];
 	while (fgets(line, sizeof(line), file)) {
 		printf("%s", line);
 	}
-	
+
 	fclose(file);
 }
 
-
 int main(int argc, char *argv[])
 {
-	generate_file();
-
 	ecs_world_t *world = ecs_init();
 	ECS_IMPORT(world, FlecsRest);
 	ECS_IMPORT(world, FlecsStats);
 	ECS_IMPORT(world, Ec);
-	ecs_script_run_file(world, "../meta_flecs/STM32C051.flecs");
 	ecs_set(world, EcsWorld, EcsRest, {.port = 0});
 
-	read_file_line_by_line("../meta/svds.txt");
+	ecs_entity_t gpios = ecs_entity_init(world, &(ecs_entity_desc_t){.name = "gpios"});
+	ecs_entity_t signals = ecs_entity_init(world, &(ecs_entity_desc_t){.name = "signals"});
+
+	// parse_svd(&result, "../meta/svd/stm32c0/STM32C051.svd");
+	parse_modes(world, "../meta/IP/GPIO-STM32C051xx_gpio_v1_0_Modes.xml", gpios, signals);
+	parse_mcu(world, "../meta/mcu/STM32C051F8Px.xml");
+
+	ecs_query_t *q = ecs_query_init(world,
+	&(ecs_query_desc_t){
+	.terms = {
+	{.id = ecs_pair(EcsChildOf, gpios)},
+	{.id = ecs_pair(EcAttached, EcsWildcard), .oper = EcsNot},
+	}});
+	ecs_iter_t it = ecs_query_iter(world, q);
+	while (ecs_query_next(&it)) {
+		for (int i = 0; i < it.count; i++) {
+			ecs_entity_t e = it.entities[i];
+			//printf("GPIO without attached signals: %s\n", ecs_get_name(world, e));
+			ecs_doc_set_color(world, e, "#FF0000");
+		}
+	}
+	ecs_query_fini(q);
+
+	char *json = ecs_world_to_json(world, &(ecs_world_to_json_desc_t){
+	                                      .serialize_builtin = false,
+	                                      .serialize_modules = false,
+	                                      });
+	if (json) {
+		FILE *f = fopen("output.json", "w");
+		if (f) {
+			fputs(json, f);
+			fclose(f);
+		}
+		ecs_os_free(json);
+	}
 
 	printf("Remote: %s\n", "https://www.flecs.dev/explorer/?remote=true");
 	while (1) {

@@ -14,6 +14,7 @@ ECS_COMPONENT_DECLARE(EcRegister);
 ECS_COMPONENT_DECLARE(EcInteger);
 ECS_COMPONENT_DECLARE(EcOffset);
 ECS_COMPONENT_DECLARE(EcSize);
+ECS_TAG_DECLARE(EcAttached);
 
 void EcImport(ecs_world_t *world)
 {
@@ -34,6 +35,9 @@ void EcImport(ecs_world_t *world)
 	ECS_COMPONENT_DEFINE(world, EcInteger);
 	ECS_COMPONENT_DEFINE(world, EcOffset);
 	ECS_COMPONENT_DEFINE(world, EcSize);
+	ECS_TAG_DEFINE(world, EcAttached);
+
+	ecs_add_id(world, EcAttached, EcsSymmetric);
 
 	ecs_add_pair(world, ecs_id(EcSignal), EcsOnInstantiate, EcsInherit);
 

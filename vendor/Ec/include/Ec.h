@@ -92,5 +92,6 @@ extern ECS_COMPONENT_DECLARE(EcGroup);
 extern ECS_COMPONENT_DECLARE(EcInteger);
 extern ECS_COMPONENT_DECLARE(EcOffset);
 extern ECS_COMPONENT_DECLARE(EcSize);
+extern ECS_TAG_DECLARE(EcAttached);
 
 void EcImport(ecs_world_t *world);

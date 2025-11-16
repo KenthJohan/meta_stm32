@@ -59,7 +59,7 @@ void result_flecs_pair(result_t *result, char const *pre0, char const *a0, char 
 	fprintf(result->file, "(%s.%s, %s.%s)\n", pre0, a0, pre1, a1);
 }
 
-void result_flecs_entity_open(result_t *result, const char *name, char const * extend, char const * brief, char const * color)
+void result_flecs_entity_open(result_t *result, const char *prefix, const char *name, char const * extend, char const * brief, char const * color)
 {
 	if (color) {
 		result_indent(result);
@@ -73,9 +73,9 @@ void result_flecs_entity_open(result_t *result, const char *name, char const * e
 	}
 	result_indent(result);
 	if (extend) {
-		fprintf(result->file, "%s : %s {\n", name, extend);
+		fprintf(result->file, "%s%s : %s {\n", prefix, name, extend);
 	} else {
-		fprintf(result->file, "%s {\n", name);
+		fprintf(result->file, "%s%s {\n", prefix, name);
 	}
 	result->ident++;
 	if (brief && (result->doc_mode == 0)) {

@@ -24988,3 +24988,1036 @@ peripherals {
 		}
 	}
 }
+signals {
+	SPI2_SCK {
+		ec.Signal : {0}
+	}
+	TIM16_CH1 {
+		ec.Signal : {0}
+	}
+	TIM1_CH1 {
+		ec.Signal : {0}
+	}
+	TIM2_CH1 {
+		ec.Signal : {0}
+	}
+	TIM2_ETR {
+		ec.Signal : {0}
+	}
+	USART1_TX {
+		ec.Signal : {0}
+	}
+	USART2_CTS {
+		ec.Signal : {0}
+	}
+	USART2_NSS {
+		ec.Signal : {0}
+	}
+	EVENTOUT {
+		ec.Signal : {0}
+	}
+	I2C1_SMBA {
+		ec.Signal : {0}
+	}
+	I2S1_CK {
+		ec.Signal : {0}
+	}
+	SPI1_SCK {
+		ec.Signal : {0}
+	}
+	TIM17_CH1 {
+		ec.Signal : {0}
+	}
+	TIM1_CH2 {
+		ec.Signal : {0}
+	}
+	TIM2_CH2 {
+		ec.Signal : {0}
+	}
+	USART1_RX {
+		ec.Signal : {0}
+	}
+	USART2_CK {
+		ec.Signal : {0}
+	}
+	USART2_DE {
+		ec.Signal : {0}
+	}
+	USART2_RTS {
+		ec.Signal : {0}
+	}
+	I2C1_SDA {
+		ec.Signal : {0}
+	}
+	I2C2_SDA {
+		ec.Signal : {0}
+	}
+	RCC_MCO_2 {
+		ec.Signal : {0}
+	}
+	SPI2_MOSI {
+		ec.Signal : {0}
+	}
+	TIM17_BKIN {
+		ec.Signal : {0}
+	}
+	TIM1_CH3 {
+		ec.Signal : {0}
+	}
+	I2C2_SCL {
+		ec.Signal : {0}
+	}
+	I2S1_MCK {
+		ec.Signal : {0}
+	}
+	SPI1_MISO {
+		ec.Signal : {0}
+	}
+	TIM1_BKIN2 {
+		ec.Signal : {0}
+	}
+	TIM1_CH4 {
+		ec.Signal : {0}
+	}
+	USART1_CTS {
+		ec.Signal : {0}
+	}
+	USART1_NSS {
+		ec.Signal : {0}
+	}
+	I2S1_SD {
+		ec.Signal : {0}
+	}
+	I2S_CKIN {
+		ec.Signal : {0}
+	}
+	SPI1_MOSI {
+		ec.Signal : {0}
+	}
+	TIM1_ETR {
+		ec.Signal : {0}
+	}
+	USART1_CK {
+		ec.Signal : {0}
+	}
+	USART1_DE {
+		ec.Signal : {0}
+	}
+	USART1_RTS {
+		ec.Signal : {0}
+	}
+	DEBUG_SWDIO {
+		ec.Signal : {0}
+	}
+	IR_OUT {
+		ec.Signal : {0}
+	}
+	TIM3_ETR {
+		ec.Signal : {0}
+	}
+	USART2_RX {
+		ec.Signal : {0}
+	}
+	DEBUG_SWCLK {
+		ec.Signal : {0}
+	}
+	I2S1_WS {
+		ec.Signal : {0}
+	}
+	SPI1_NSS {
+		ec.Signal : {0}
+	}
+	USART2_TX {
+		ec.Signal : {0}
+	}
+	TIM16_CH1N {
+		ec.Signal : {0}
+	}
+	TIM2_CH3 {
+		ec.Signal : {0}
+	}
+	SPI2_MISO {
+		ec.Signal : {0}
+	}
+	TIM1_CH1N {
+		ec.Signal : {0}
+	}
+	TIM2_CH4 {
+		ec.Signal : {0}
+	}
+	TIM14_CH1 {
+		ec.Signal : {0}
+	}
+	TIM17_CH1N {
+		ec.Signal : {0}
+	}
+	TIM1_CH2N {
+		ec.Signal : {0}
+	}
+	TIM1_CH3N {
+		ec.Signal : {0}
+	}
+	TIM1_BKIN {
+		ec.Signal : {0}
+	}
+	TIM3_CH1 {
+		ec.Signal : {0}
+	}
+	TIM3_CH2 {
+		ec.Signal : {0}
+	}
+	RCC_MCO {
+		ec.Signal : {0}
+	}
+	SPI2_NSS {
+		ec.Signal : {0}
+	}
+	TIM3_CH3 {
+		ec.Signal : {0}
+	}
+	TIM3_CH4 {
+		ec.Signal : {0}
+	}
+	I2C1_SCL {
+		ec.Signal : {0}
+	}
+	RCC_MCO2 {
+		ec.Signal : {0}
+	}
+	TIM16_BKIN {
+		ec.Signal : {0}
+	}
+	RCC_OSC32_EN {
+		ec.Signal : {0}
+	}
+	RCC_OSC_EN {
+		ec.Signal : {0}
+	}
+}
+gpios {
+	PA0 {
+		ec.Pin : {}
+		AF0_SPI2_SCK : signals.SPI2_SCK {
+		}
+		AF2_TIM16_CH1 : signals.TIM16_CH1 {
+		}
+		AF5_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF3_TIM2_CH1 : signals.TIM2_CH1 {
+		}
+		AF3_TIM2_ETR : signals.TIM2_ETR {
+		}
+		AF4_USART1_TX : signals.USART1_TX {
+		}
+		AF1_USART2_CTS : signals.USART2_CTS {
+		}
+		AF1_USART2_NSS : signals.USART2_NSS {
+		}
+	}
+	PA1 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SMBA : signals.I2C1_SMBA {
+		}
+		AF0_I2S1_CK : signals.I2S1_CK {
+		}
+		AF0_SPI1_SCK : signals.SPI1_SCK {
+		}
+		AF2_TIM17_CH1 : signals.TIM17_CH1 {
+		}
+		AF5_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF3_TIM2_CH2 : signals.TIM2_CH2 {
+		}
+		AF4_USART1_RX : signals.USART1_RX {
+		}
+		AF1_USART2_CK : signals.USART2_CK {
+		}
+		AF1_USART2_DE : signals.USART2_DE {
+		}
+		AF1_USART2_RTS : signals.USART2_RTS {
+		}
+	}
+	PA10 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SDA : signals.I2C1_SDA {
+		}
+		AF8_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF3_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF0_SPI2_MOSI : signals.SPI2_MOSI {
+		}
+		AF5_TIM17_BKIN : signals.TIM17_BKIN {
+		}
+		AF2_TIM1_CH3 : signals.TIM1_CH3 {
+		}
+		AF1_USART1_RX : signals.USART1_RX {
+		}
+	}
+	PA10__PA12_ {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SDA : signals.I2C1_SDA {
+		}
+		AF3_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF5_TIM17_BKIN : signals.TIM17_BKIN {
+		}
+		AF2_TIM1_CH3 : signals.TIM1_CH3 {
+		}
+		AF1_USART1_RX : signals.USART1_RX {
+		}
+	}
+	PA11__PA9_ {
+		ec.Pin : {}
+		AF6_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF0_I2S1_MCK : signals.I2S1_MCK {
+		}
+		AF0_SPI1_MISO : signals.SPI1_MISO {
+		}
+		AF5_TIM1_BKIN2 : signals.TIM1_BKIN2 {
+		}
+		AF2_TIM1_CH4 : signals.TIM1_CH4 {
+		}
+		AF1_USART1_CTS : signals.USART1_CTS {
+		}
+		AF1_USART1_NSS : signals.USART1_NSS {
+		}
+	}
+	PA12__PA10_ {
+		ec.Pin : {}
+		AF6_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF0_I2S1_SD : signals.I2S1_SD {
+		}
+		AF5_I2S_CKIN : signals.I2S_CKIN {
+		}
+		AF0_SPI1_MOSI : signals.SPI1_MOSI {
+		}
+		AF2_TIM1_ETR : signals.TIM1_ETR {
+		}
+		AF1_USART1_CK : signals.USART1_CK {
+		}
+		AF1_USART1_DE : signals.USART1_DE {
+		}
+		AF1_USART1_RTS : signals.USART1_RTS {
+		}
+	}
+	PA13 {
+		ec.Pin : {}
+		AF0_DEBUG_SWDIO : signals.DEBUG_SWDIO {
+		}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF1_IR_OUT : signals.IR_OUT {
+		}
+		AF3_TIM3_ETR : signals.TIM3_ETR {
+		}
+		AF4_USART2_RX : signals.USART2_RX {
+		}
+	}
+	PA14_BOOT0 {
+		ec.Pin : {}
+		AF0_DEBUG_SWCLK : signals.DEBUG_SWCLK {
+		}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF8_I2S1_WS : signals.I2S1_WS {
+		}
+		AF11_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF8_SPI1_NSS : signals.SPI1_NSS {
+		}
+		AF10_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF12_USART1_CK : signals.USART1_CK {
+		}
+		AF12_USART1_DE : signals.USART1_DE {
+		}
+		AF12_USART1_RTS : signals.USART1_RTS {
+		}
+		AF9_USART2_RX : signals.USART2_RX {
+		}
+		AF1_USART2_TX : signals.USART2_TX {
+		}
+	}
+	PA15 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_I2S1_WS : signals.I2S1_WS {
+		}
+		AF3_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF0_SPI1_NSS : signals.SPI1_NSS {
+		}
+		AF2_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF5_TIM2_CH1 : signals.TIM2_CH1 {
+		}
+		AF5_TIM2_ETR : signals.TIM2_ETR {
+		}
+		AF4_USART1_CK : signals.USART1_CK {
+		}
+		AF4_USART1_DE : signals.USART1_DE {
+		}
+		AF4_USART1_RTS : signals.USART1_RTS {
+		}
+		AF1_USART2_RX : signals.USART2_RX {
+		}
+	}
+	PA2 {
+		ec.Pin : {}
+		AF0_I2S1_SD : signals.I2S1_SD {
+		}
+		AF0_SPI1_MOSI : signals.SPI1_MOSI {
+		}
+		AF2_TIM16_CH1N : signals.TIM16_CH1N {
+		}
+		AF5_TIM1_CH3 : signals.TIM1_CH3 {
+		}
+		AF6_TIM2_CH3 : signals.TIM2_CH3 {
+		}
+		AF3_TIM3_ETR : signals.TIM3_ETR {
+		}
+		AF1_USART2_TX : signals.USART2_TX {
+		}
+	}
+	PA3 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF2_TIM1_CH1N : signals.TIM1_CH1N {
+		}
+		AF5_TIM1_CH4 : signals.TIM1_CH4 {
+		}
+		AF3_TIM2_CH4 : signals.TIM2_CH4 {
+		}
+		AF1_USART2_RX : signals.USART2_RX {
+		}
+	}
+	PA4 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_I2S1_WS : signals.I2S1_WS {
+		}
+		AF0_SPI1_NSS : signals.SPI1_NSS {
+		}
+		AF3_SPI2_MOSI : signals.SPI2_MOSI {
+		}
+		AF4_TIM14_CH1 : signals.TIM14_CH1 {
+		}
+		AF5_TIM17_CH1N : signals.TIM17_CH1N {
+		}
+		AF2_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+		AF1_USART2_TX : signals.USART2_TX {
+		}
+	}
+	PA5 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_I2S1_CK : signals.I2S1_CK {
+		}
+		AF0_SPI1_SCK : signals.SPI1_SCK {
+		}
+		AF5_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF2_TIM1_CH3N : signals.TIM1_CH3N {
+		}
+		AF3_TIM2_CH1 : signals.TIM2_CH1 {
+		}
+		AF3_TIM2_ETR : signals.TIM2_ETR {
+		}
+		AF1_USART2_RX : signals.USART2_RX {
+		}
+	}
+	PA6 {
+		ec.Pin : {}
+		AF6_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF0_I2S1_MCK : signals.I2S1_MCK {
+		}
+		AF0_SPI1_MISO : signals.SPI1_MISO {
+		}
+		AF5_TIM16_CH1 : signals.TIM16_CH1 {
+		}
+		AF2_TIM1_BKIN : signals.TIM1_BKIN {
+		}
+		AF1_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+		AF3_USART1_TX : signals.USART1_TX {
+		}
+	}
+	PA7 {
+		ec.Pin : {}
+		AF6_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF0_I2S1_SD : signals.I2S1_SD {
+		}
+		AF0_SPI1_MOSI : signals.SPI1_MOSI {
+		}
+		AF4_TIM14_CH1 : signals.TIM14_CH1 {
+		}
+		AF5_TIM17_CH1 : signals.TIM17_CH1 {
+		}
+		AF2_TIM1_CH1N : signals.TIM1_CH1N {
+		}
+		AF1_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF3_USART1_RX : signals.USART1_RX {
+		}
+	}
+	PA8 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF8_I2S1_WS : signals.I2S1_WS {
+		}
+		AF0_RCC_MCO : signals.RCC_MCO {
+		}
+		AF15_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF8_SPI1_NSS : signals.SPI1_NSS {
+		}
+		AF6_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF3_SPI2_NSS : signals.SPI2_NSS {
+		}
+		AF13_TIM14_CH1 : signals.TIM14_CH1 {
+		}
+		AF2_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF9_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+		AF10_TIM1_CH3N : signals.TIM1_CH3N {
+		}
+		AF11_TIM3_CH3 : signals.TIM3_CH3 {
+		}
+		AF12_TIM3_CH4 : signals.TIM3_CH4 {
+		}
+		AF14_USART1_RX : signals.USART1_RX {
+		}
+		AF1_USART2_TX : signals.USART2_TX {
+		}
+	}
+	PA9 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SCL : signals.I2C1_SCL {
+		}
+		AF8_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF0_RCC_MCO : signals.RCC_MCO {
+		}
+		AF4_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF2_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF3_TIM3_ETR : signals.TIM3_ETR {
+		}
+		AF1_USART1_TX : signals.USART1_TX {
+		}
+	}
+	PA9__PA11_ {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SCL : signals.I2C1_SCL {
+		}
+		AF0_RCC_MCO : signals.RCC_MCO {
+		}
+		AF2_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF3_TIM3_ETR : signals.TIM3_ETR {
+		}
+		AF1_USART1_TX : signals.USART1_TX {
+		}
+	}
+	PB0 {
+		ec.Pin : {}
+		AF0_I2S1_WS : signals.I2S1_WS {
+		}
+		AF0_SPI1_NSS : signals.SPI1_NSS {
+		}
+		AF2_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+		AF1_TIM3_CH3 : signals.TIM3_CH3 {
+		}
+	}
+	PB1 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_TIM14_CH1 : signals.TIM14_CH1 {
+		}
+		AF5_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+		AF2_TIM1_CH3N : signals.TIM1_CH3N {
+		}
+		AF1_TIM3_CH4 : signals.TIM3_CH4 {
+		}
+	}
+	PB10 {
+		ec.Pin : {}
+		AF6_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF5_SPI2_SCK : signals.SPI2_SCK {
+		}
+		AF3_TIM2_CH3 : signals.TIM2_CH3 {
+		}
+	}
+	PB11 {
+		ec.Pin : {}
+		AF6_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF0_SPI2_MOSI : signals.SPI2_MOSI {
+		}
+		AF3_TIM2_CH4 : signals.TIM2_CH4 {
+		}
+	}
+	PB12 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_SPI2_NSS : signals.SPI2_NSS {
+		}
+		AF2_TIM1_BKIN : signals.TIM1_BKIN {
+		}
+		AF1_TIM1_BKIN2 : signals.TIM1_BKIN2 {
+		}
+	}
+	PB13 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF0_SPI2_SCK : signals.SPI2_SCK {
+		}
+		AF2_TIM1_CH1N : signals.TIM1_CH1N {
+		}
+	}
+	PB14 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF0_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF2_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+	}
+	PB15 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF0_SPI2_MOSI : signals.SPI2_MOSI {
+		}
+		AF2_TIM1_CH3N : signals.TIM1_CH3N {
+		}
+	}
+	PB2 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF3_RCC_MCO2 : signals.RCC_MCO2 {
+		}
+		AF3_RCC_MCO_2 : signals.RCC_MCO_2 {
+		}
+		AF4_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF0_USART1_RX : signals.USART1_RX {
+		}
+	}
+	PB3 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF5_I2C2_SCL : signals.I2C2_SCL {
+		}
+		AF0_I2S1_CK : signals.I2S1_CK {
+		}
+		AF0_SPI1_SCK : signals.SPI1_SCK {
+		}
+		AF1_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF6_TIM2_CH2 : signals.TIM2_CH2 {
+		}
+		AF3_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF4_USART1_CK : signals.USART1_CK {
+		}
+		AF4_USART1_DE : signals.USART1_DE {
+		}
+		AF4_USART1_RTS : signals.USART1_RTS {
+		}
+	}
+	PB4 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C2_SDA : signals.I2C2_SDA {
+		}
+		AF0_I2S1_MCK : signals.I2S1_MCK {
+		}
+		AF0_SPI1_MISO : signals.SPI1_MISO {
+		}
+		AF5_TIM17_BKIN : signals.TIM17_BKIN {
+		}
+		AF1_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+		AF4_USART1_CTS : signals.USART1_CTS {
+		}
+		AF4_USART1_NSS : signals.USART1_NSS {
+		}
+	}
+	PB5 {
+		ec.Pin : {}
+		AF6_I2C1_SMBA : signals.I2C1_SMBA {
+		}
+		AF0_I2S1_SD : signals.I2S1_SD {
+		}
+		AF0_SPI1_MOSI : signals.SPI1_MOSI {
+		}
+		AF2_TIM16_BKIN : signals.TIM16_BKIN {
+		}
+		AF1_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF3_TIM3_CH3 : signals.TIM3_CH3 {
+		}
+	}
+	PB6 {
+		ec.Pin : {}
+		AF6_I2C1_SCL : signals.I2C1_SCL {
+		}
+		AF7_I2C1_SMBA : signals.I2C1_SMBA {
+		}
+		AF10_I2S1_CK : signals.I2S1_CK {
+		}
+		AF9_I2S1_MCK : signals.I2S1_MCK {
+		}
+		AF8_I2S1_SD : signals.I2S1_SD {
+		}
+		AF9_SPI1_MISO : signals.SPI1_MISO {
+		}
+		AF8_SPI1_MOSI : signals.SPI1_MOSI {
+		}
+		AF10_SPI1_SCK : signals.SPI1_SCK {
+		}
+		AF4_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF14_TIM16_BKIN : signals.TIM16_BKIN {
+		}
+		AF2_TIM16_CH1N : signals.TIM16_CH1N {
+		}
+		AF15_TIM17_BKIN : signals.TIM17_BKIN {
+		}
+		AF11_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF1_TIM1_CH3 : signals.TIM1_CH3 {
+		}
+		AF12_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+		AF13_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF3_TIM3_CH3 : signals.TIM3_CH3 {
+		}
+		AF5_USART1_CTS : signals.USART1_CTS {
+		}
+		AF5_USART1_NSS : signals.USART1_NSS {
+		}
+		AF0_USART1_TX : signals.USART1_TX {
+		}
+	}
+	PB7 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF14_I2C1_SCL : signals.I2C1_SCL {
+		}
+		AF6_I2C1_SDA : signals.I2C1_SDA {
+		}
+		AF4_SPI2_MOSI : signals.SPI2_MOSI {
+		}
+		AF10_TIM16_CH1 : signals.TIM16_CH1 {
+		}
+		AF2_TIM17_CH1N : signals.TIM17_CH1N {
+		}
+		AF5_TIM1_CH1 : signals.TIM1_CH1 {
+		}
+		AF1_TIM1_CH4 : signals.TIM1_CH4 {
+		}
+		AF11_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+		AF3_TIM3_CH4 : signals.TIM3_CH4 {
+		}
+		AF0_USART1_RX : signals.USART1_RX {
+		}
+		AF9_USART2_CTS : signals.USART2_CTS {
+		}
+		AF9_USART2_NSS : signals.USART2_NSS {
+		}
+	}
+	PB8 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SCL : signals.I2C1_SCL {
+		}
+		AF4_SPI2_SCK : signals.SPI2_SCK {
+		}
+		AF2_TIM16_CH1 : signals.TIM16_CH1 {
+		}
+		AF3_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+		AF1_USART2_CTS : signals.USART2_CTS {
+		}
+		AF1_USART2_NSS : signals.USART2_NSS {
+		}
+	}
+	PB9 {
+		ec.Pin : {}
+		AF7_EVENTOUT : signals.EVENTOUT {
+		}
+		AF6_I2C1_SDA : signals.I2C1_SDA {
+		}
+		AF0_IR_OUT : signals.IR_OUT {
+		}
+		AF5_SPI2_NSS : signals.SPI2_NSS {
+		}
+		AF2_TIM17_CH1 : signals.TIM17_CH1 {
+		}
+		AF3_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF1_USART2_CK : signals.USART2_CK {
+		}
+		AF1_USART2_DE : signals.USART2_DE {
+		}
+		AF1_USART2_RTS : signals.USART2_RTS {
+		}
+	}
+	PC13 {
+		ec.Pin : {}
+		AF2_TIM1_BKIN : signals.TIM1_BKIN {
+		}
+		AF1_TIM1_ETR : signals.TIM1_ETR {
+		}
+	}
+	PC14_OSCX_IN__PC14_ {
+		ec.Pin : {}
+	}
+	PC14_OSCX_IN_PC14_ {
+		ec.Pin : {}
+		AF15_EVENTOUT : signals.EVENTOUT {
+		}
+		AF14_I2C1_SDA : signals.I2C1_SDA {
+		}
+		AF8_IR_OUT : signals.IR_OUT {
+		}
+		AF12_SPI2_NSS : signals.SPI2_NSS {
+		}
+		AF10_TIM17_CH1 : signals.TIM17_CH1 {
+		}
+		AF2_TIM1_BKIN2 : signals.TIM1_BKIN2 {
+		}
+		AF1_TIM1_ETR : signals.TIM1_ETR {
+		}
+		AF11_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+		AF3_USART1_RX : signals.USART1_RX {
+		}
+		AF0_USART1_TX : signals.USART1_TX {
+		}
+		AF9_USART2_CK : signals.USART2_CK {
+		}
+		AF9_USART2_DE : signals.USART2_DE {
+		}
+		AF9_USART2_RTS : signals.USART2_RTS {
+		}
+	}
+	PC15_OSCX_OUT__PC15_ {
+		ec.Pin : {}
+	}
+	PC15_OSCX_OUT_PC15_ {
+		ec.Pin : {}
+		AF0_RCC_OSC32_EN : signals.RCC_OSC32_EN {
+		}
+		AF1_RCC_OSC_EN : signals.RCC_OSC_EN {
+		}
+		AF5_TIM1_CH2 : signals.TIM1_CH2 {
+		}
+		AF2_TIM1_ETR : signals.TIM1_ETR {
+		}
+		AF3_TIM3_CH3 : signals.TIM3_CH3 {
+		}
+	}
+	PC6 {
+		ec.Pin : {}
+		AF3_TIM2_CH3 : signals.TIM2_CH3 {
+		}
+		AF1_TIM3_CH1 : signals.TIM3_CH1 {
+		}
+	}
+	PC7 {
+		ec.Pin : {}
+		AF3_TIM2_CH4 : signals.TIM2_CH4 {
+		}
+		AF1_TIM3_CH2 : signals.TIM3_CH2 {
+		}
+	}
+	PD0 {
+		ec.Pin : {}
+		AF0_EVENTOUT : signals.EVENTOUT {
+		}
+		AF3_SPI2_NSS : signals.SPI2_NSS {
+		}
+		AF2_TIM16_CH1 : signals.TIM16_CH1 {
+		}
+	}
+	PD1 {
+		ec.Pin : {}
+		AF0_EVENTOUT : signals.EVENTOUT {
+		}
+		AF3_SPI2_SCK : signals.SPI2_SCK {
+		}
+		AF2_TIM17_CH1 : signals.TIM17_CH1 {
+		}
+	}
+	PD2 {
+		ec.Pin : {}
+		AF2_TIM1_CH1N : signals.TIM1_CH1N {
+		}
+		AF1_TIM3_ETR : signals.TIM3_ETR {
+		}
+	}
+	PD3 {
+		ec.Pin : {}
+		AF3_SPI2_MISO : signals.SPI2_MISO {
+		}
+		AF2_TIM1_CH2N : signals.TIM1_CH2N {
+		}
+		AF0_USART2_CTS : signals.USART2_CTS {
+		}
+		AF0_USART2_NSS : signals.USART2_NSS {
+		}
+	}
+	PF0_OSC_IN_PF0_ {
+		ec.Pin : {}
+		AF2_TIM14_CH1 : signals.TIM14_CH1 {
+		}
+	}
+	PF1_OSC_OUT_PF1_ {
+		ec.Pin : {}
+		AF0_RCC_OSC_EN : signals.RCC_OSC_EN {
+		}
+	}
+	PF2_NRST {
+		ec.Pin : {}
+		AF0_RCC_MCO : signals.RCC_MCO {
+		}
+		AF1_TIM1_CH4 : signals.TIM1_CH4 {
+		}
+	}
+	PF3 {
+		ec.Pin : {}
+	}
+	PI8 {
+		ec.Pin : {}
+	}
+}
+pads {
+	pad_1 {
+		ec.Pin : {}
+	}
+	pad_1 {
+		ec.Pin : {}
+	}
+	pad_2 {
+		ec.Pin : {}
+	}
+	pad_3 {
+		ec.Pin : {}
+	}
+	pad_4 {
+		ec.Pin : {}
+	}
+	pad_5 {
+		ec.Pin : {}
+	}
+	pad_6 {
+		ec.Pin : {}
+	}
+	pad_7 {
+		ec.Pin : {}
+	}
+	pad_8 {
+		ec.Pin : {}
+	}
+	pad_9 {
+		ec.Pin : {}
+	}
+	pad_10 {
+		ec.Pin : {}
+	}
+	pad_11 {
+		ec.Pin : {}
+	}
+	pad_12 {
+		ec.Pin : {}
+	}
+	pad_13 {
+		ec.Pin : {}
+	}
+	pad_14 {
+		ec.Pin : {}
+	}
+	pad_15 {
+		ec.Pin : {}
+	}
+	pad_16 {
+		ec.Pin : {}
+	}
+	pad_16 {
+		ec.Pin : {}
+	}
+	pad_17 {
+		ec.Pin : {}
+	}
+	pad_17 {
+		ec.Pin : {}
+	}
+	pad_18 {
+		ec.Pin : {}
+	}
+	pad_19 {
+		ec.Pin : {}
+	}
+	pad_19 {
+		ec.Pin : {}
+	}
+	pad_20 {
+		ec.Pin : {}
+	}
+	pad_20 {
+		ec.Pin : {}
+	}
+	pad_20 {
+		ec.Pin : {}
+	}
+	pad_20 {
+		ec.Pin : {}
+	}
+}
