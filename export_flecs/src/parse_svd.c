@@ -7,6 +7,7 @@ https://jsonformatter.org/xml-viewer
 #include <flecs.h>
 #include <flecs.h>
 #include <mxml.h>
+#include <Ec.h>
 #include "parse_svd.h"
 #include "printer.h"
 
@@ -66,6 +67,13 @@ void iterate_fields(ecs_world_t *world, ecs_entity_t parent, mxml_node_t *node, 
 				}
 			}
 			if (field.bitOffset && field.bitWidth) {
+				char const * str_bitOffset = mxmlGetOpaque(field.bitOffset);
+				char const * str_bitWidth = mxmlGetOpaque(field.bitWidth);
+				EcArea area = {0};
+				area.offset = atoi(str_bitOffset);
+				area.width = atoi(str_bitWidth);
+				area.unit = EcsBits;
+				ecs_set_ptr(world, f, EcArea, &area);
 				// result_flecs_field(mxmlGetOpaque(field.bitOffset), mxmlGetOpaque(field.bitWidth), mxmlGetOpaque(field.access));
 			}
 		}

@@ -10,8 +10,6 @@ https://jsonformatter.org/xml-viewer
 #include "parse_mcu.h"
 #include "parse_modes.h"
 
-
-
 int main(int argc, char *argv[])
 {
 	ecs_world_t *world = ecs_init();
@@ -38,23 +36,26 @@ int main(int argc, char *argv[])
 	while (ecs_query_next(&it)) {
 		for (int i = 0; i < it.count; i++) {
 			ecs_entity_t e = it.entities[i];
-			//printf("GPIO without attached signals: %s\n", ecs_get_name(world, e));
+			// printf("GPIO without attached signals: %s\n", ecs_get_name(world, e));
 			ecs_doc_set_color(world, e, "#FF0000");
 		}
 	}
 	ecs_query_fini(q);
 
-	char *json = ecs_world_to_json(world, &(ecs_world_to_json_desc_t){
-	                                      .serialize_builtin = false,
-	                                      .serialize_modules = false,
-	                                      });
-	if (json) {
-		FILE *f = fopen("output.json", "w");
-		if (f) {
-			fputs(json, f);
-			fclose(f);
+	{
+		char *json = ecs_world_to_json(world,
+		&(ecs_world_to_json_desc_t){
+		.serialize_builtin = false,
+		.serialize_modules = false,
+		});
+		if (json) {
+			FILE *f = fopen("output.json", "w");
+			if (f) {
+				fputs(json, f);
+				fclose(f);
+			}
+			ecs_os_free(json);
 		}
-		ecs_os_free(json);
 	}
 
 	printf("Remote: %s\n", "https://www.flecs.dev/explorer/?remote=true");
