@@ -35,7 +35,7 @@ typedef struct {
 	mxml_node_t *access;
 } svd_field_t;
 
-void iterate_fields(mxml_node_t *node, mxml_node_t *top, result_t *result)
+void iterate_fields(ecs_world_t *world, ecs_entity_t parent, mxml_node_t *node, mxml_node_t *top)
 {
 	mxml_node_t *child = mxmlGetFirstChild(node);
 	while (child != NULL) {
@@ -49,22 +49,31 @@ void iterate_fields(mxml_node_t *node, mxml_node_t *top, result_t *result)
 		field.bitOffset = mxmlFindElement(child, top, "bitOffset", NULL, NULL, MXML_DESCEND_FIRST);
 		field.bitWidth = mxmlFindElement(child, top, "bitWidth", NULL, NULL, MXML_DESCEND_FIRST);
 		field.access = mxmlFindElement(child, top, "access", NULL, NULL, MXML_DESCEND_FIRST);
+		ecs_entity_t f = 0;
 		if (field.name) {
-			char const * brief = NULL;
+			char const *name = mxmlGetOpaque(field.name);
+			f = ecs_entity_init(world,
+			&(ecs_entity_desc_t){
+			.parent = parent,
+			.name = name,
+			});
+		}
+		if (f) {
 			if (field.description) {
-				brief = mxmlGetOpaque(field.description);
+				char const *brief = mxmlGetOpaque(field.description);
+				if (brief) {
+					ecs_doc_set_brief(world, f, brief);
+				}
 			}
-			result_flecs_entity_open(result, "", mxmlGetOpaque(field.name), NULL, brief, result->color_fields);
 			if (field.bitOffset && field.bitWidth) {
-				result_flecs_field(result, mxmlGetOpaque(field.bitOffset), mxmlGetOpaque(field.bitWidth), mxmlGetOpaque(field.access));
+				// result_flecs_field(mxmlGetOpaque(field.bitOffset), mxmlGetOpaque(field.bitWidth), mxmlGetOpaque(field.access));
 			}
-			result_flecs_entity_close(result);
 		}
 		child = mxmlGetNextSibling(child);
 	}
 }
 
-void iterate_registers(mxml_node_t *node, mxml_node_t *top, result_t *result)
+void iterate_registers(ecs_world_t *world, ecs_entity_t parent, mxml_node_t *node, mxml_node_t *top)
 {
 	mxml_node_t *child = mxmlGetFirstChild(node);
 	while (child != NULL) {
@@ -80,24 +89,34 @@ void iterate_registers(mxml_node_t *node, mxml_node_t *top, result_t *result)
 		regs.access = mxmlFindElement(child, top, "access", NULL, NULL, MXML_DESCEND_FIRST);
 		regs.size = mxmlFindElement(child, top, "size", NULL, NULL, MXML_DESCEND_FIRST);
 
+		ecs_entity_t reg = 0;
+
 		if (regs.name) {
-			char const * brief = NULL;
+			char const *name = mxmlGetOpaque(regs.name);
+			reg = ecs_entity_init(world,
+			&(ecs_entity_desc_t){
+			.parent = parent,
+			.name = name,
+			});
+		}
+
+		if (reg) {
 			if (regs.description) {
-				brief = mxmlGetOpaque(regs.description);
+				char const *brief = mxmlGetOpaque(regs.description);
+				if (brief) {
+					ecs_doc_set_brief(world, reg, brief);
+				}
 			}
-			result_flecs_entity_open(result, "", mxmlGetOpaque(regs.name), NULL, brief, result->color_registers);
-			result_flecs_register(result, mxmlGetOpaque(regs.address), mxmlGetOpaque(regs.access), mxmlGetOpaque(regs.size));
 			if (regs.fields) {
-				iterate_fields(regs.fields, top, result);
+				iterate_fields(world, reg, regs.fields, top);
 			}
-			result_flecs_entity_close(result);
 		}
 
 		child = mxmlGetNextSibling(child);
 	}
 }
 
-void iterate_peripherals(mxml_node_t *node, mxml_node_t *top, result_t *result)
+void iterate_peripherals(ecs_world_t *world, ecs_entity_t parent, mxml_node_t *node, mxml_node_t *top)
 {
 	mxml_node_t *child = mxmlGetFirstChild(node);
 	while (child != NULL) {
@@ -117,34 +136,41 @@ void iterate_peripherals(mxml_node_t *node, mxml_node_t *top, result_t *result)
 				printf("Derived from %s\n", mxmlGetOpaque(mxmlFindElement(g, top, "name", NULL, NULL, MXML_DESCEND_FIRST)));
 				peripheral.description = mxmlFindElement(g, top, "description", NULL, NULL, MXML_DESCEND_FIRST);
 				peripheral.registers = mxmlFindElement(g, top, "registers", NULL, NULL, MXML_DESCEND_FIRST);
-				mxml_node_t * ablock = mxmlFindElement(g, top, "addressBlock", NULL, NULL, MXML_DESCEND_FIRST);
+				mxml_node_t *ablock = mxmlFindElement(g, top, "addressBlock", NULL, NULL, MXML_DESCEND_FIRST);
 				peripheral.size = mxmlFindElement(ablock, top, "size", NULL, NULL, MXML_DESCEND_FIRST);
 			}
 		} else {
 			peripheral.description = mxmlFindElement(child, top, "description", NULL, NULL, MXML_DESCEND_FIRST);
 			peripheral.registers = mxmlFindElement(child, top, "registers", NULL, NULL, MXML_DESCEND_FIRST);
-			mxml_node_t * ablock = mxmlFindElement(child, top, "addressBlock", NULL, NULL, MXML_DESCEND_FIRST);
+			mxml_node_t *ablock = mxmlFindElement(child, top, "addressBlock", NULL, NULL, MXML_DESCEND_FIRST);
 			peripheral.size = mxmlFindElement(ablock, top, "size", NULL, NULL, MXML_DESCEND_FIRST);
 		}
-
+		ecs_entity_t per = 0;
 		if (peripheral.name) {
-			char const * brief = NULL;
+			char const *name = mxmlGetOpaque(peripheral.name);
+			per = ecs_entity_init(world,
+			&(ecs_entity_desc_t){
+			.parent = parent,
+			.name = name,
+			});
+		}
+		if (per) {
 			if (peripheral.description) {
-				brief = mxmlGetOpaque(peripheral.description);
+				char const *brief = mxmlGetOpaque(peripheral.description);
+				if (brief) {
+					ecs_doc_set_brief(world, per, brief);
+				}
 			}
-			result_flecs_entity_open(result, "", mxmlGetOpaque(peripheral.name), NULL, brief, result->color_peripherals);
-			result_flecs_peripheral(result, mxmlGetOpaque(peripheral.address), mxmlGetOpaque(peripheral.size));
 			if (peripheral.registers) {
-				iterate_registers(peripheral.registers, top, result);
+				iterate_registers(world, per, peripheral.registers, top);
 			}
-			result_flecs_entity_close(result);
 		}
 
 		child = mxmlGetNextSibling(child);
 	}
 }
 
-void if_file_exists(char const * filename)
+void if_file_exists(char const *filename)
 {
 	FILE *f = fopen(filename, "r");
 	if (f) {
@@ -155,7 +181,7 @@ void if_file_exists(char const * filename)
 	}
 }
 
-int parse_svd(result_t *result, char const * filename)
+int parse_svd(ecs_world_t *world, char const *filename, ecs_entity_t parent)
 {
 	mxml_node_t *tree;
 	mxml_options_t *options = mxmlOptionsNew();
@@ -164,8 +190,6 @@ int parse_svd(result_t *result, char const * filename)
 	tree = mxmlLoadFilename(NULL, options, filename);
 	mxml_node_t *node = tree;
 	node = mxmlFindElement(node, tree, "peripherals", NULL, NULL, MXML_DESCEND_ALL);
-	result_flecs_entity_open(result, "", "peripherals", NULL, NULL, NULL);
-	iterate_peripherals(node, tree, result);
-	result_flecs_entity_close(result);
+	iterate_peripherals(world, parent, node, tree);
 	return tree != NULL;
 }

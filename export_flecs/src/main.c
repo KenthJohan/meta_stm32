@@ -9,41 +9,8 @@ https://jsonformatter.org/xml-viewer
 #include "parse_svd.h"
 #include "parse_mcu.h"
 #include "parse_modes.h"
-#include "printer.h"
 
-#include <mxml.h>
 
-const char *find_last_slash(const char *str)
-{
-	if (str == NULL) {
-		return NULL;
-	}
-
-	const char *last_slash = NULL;
-	for (const char *p = str; *p != '\0'; p++) {
-		if (*p == '/') {
-			last_slash = p;
-		}
-	}
-
-	return last_slash;
-}
-
-void read_file_line_by_line(const char *filename)
-{
-	FILE *file = fopen(filename, "r");
-	if (file == NULL) {
-		printf("Error opening file: %s\n", filename);
-		return;
-	}
-
-	char line[1024];
-	while (fgets(line, sizeof(line), file)) {
-		printf("%s", line);
-	}
-
-	fclose(file);
-}
 
 int main(int argc, char *argv[])
 {
@@ -53,10 +20,11 @@ int main(int argc, char *argv[])
 	ECS_IMPORT(world, Ec);
 	ecs_set(world, EcsWorld, EcsRest, {.port = 0});
 
+	ecs_entity_t peripherals = ecs_entity_init(world, &(ecs_entity_desc_t){.name = "peripherals"});
 	ecs_entity_t gpios = ecs_entity_init(world, &(ecs_entity_desc_t){.name = "gpios"});
 	ecs_entity_t signals = ecs_entity_init(world, &(ecs_entity_desc_t){.name = "signals"});
 
-	// parse_svd(&result, "../meta/svd/stm32c0/STM32C051.svd");
+	parse_svd(world, "../meta/svd/stm32c0/STM32C051.svd", peripherals);
 	parse_modes(world, "../meta/IP/GPIO-STM32C051xx_gpio_v1_0_Modes.xml", gpios, signals);
 	parse_mcu(world, "../meta/mcu/STM32C051F8Px.xml");
 

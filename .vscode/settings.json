@@ -16,7 +16,8 @@
 		"mxml.h": "c",
 		"str.h": "c",
 		"typeindex": "c",
-		"typeinfo": "c"
+		"typeinfo": "c",
+		"string.h": "c"
 	},
 	"terminal.integrated.env.linux": {
 		"GTK_PATH": ""

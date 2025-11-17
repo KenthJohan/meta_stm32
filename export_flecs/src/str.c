@@ -1,6 +1,7 @@
 #include "str.h"
 #include <ctype.h>
 #include <string.h>
+#include <stdio.h>
 
 void str_copy_gpioaf(char *dst, int size, char const *src)
 {
@@ -86,4 +87,37 @@ void str_copy_position(char *dst, char const *src)
 		src++;
 	}
 	*dst = 0;
+}
+
+
+const char *find_last_slash(const char *str)
+{
+	if (str == NULL) {
+		return NULL;
+	}
+
+	const char *last_slash = NULL;
+	for (const char *p = str; *p != '\0'; p++) {
+		if (*p == '/') {
+			last_slash = p;
+		}
+	}
+
+	return last_slash;
+}
+
+void read_file_line_by_line(const char *filename)
+{
+	FILE *file = fopen(filename, "r");
+	if (file == NULL) {
+		printf("Error opening file: %s\n", filename);
+		return;
+	}
+
+	char line[1024];
+	while (fgets(line, sizeof(line), file)) {
+		printf("%s", line);
+	}
+
+	fclose(file);
 }
